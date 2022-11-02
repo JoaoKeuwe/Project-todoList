@@ -1,5 +1,5 @@
 <template>
-    <Header/>
+    <Header />
     <p>historico</p>
 </template>
 
