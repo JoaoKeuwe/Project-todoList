@@ -1,8 +1,8 @@
 <template>
   <nav>
-    <img src="../img/logo.png" alt="">
-    <li>Home</li>
-    <li>Histórico</li>
+    <img src="../img/logo.png" alt="" style="width: 200px" />
+    <a href=""> <li>Home</li> </a>
+    <a href=""> <li>Histórico</li> </a>
   </nav>
 </template>
 
