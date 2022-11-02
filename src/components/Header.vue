@@ -1,9 +1,10 @@
 <template>
   <nav>
     <img src="../img/logo.png" alt="" style="width: 200px" />
-    <a href=""> <li>Home</li> </a>
-    <a href=""> <li>Histórico</li> </a>
+    <router-link to="/">Home</router-link>
+    <router-link to="/historic">historico</router-link>
   </nav>
+
 </template>
 
 <script>
