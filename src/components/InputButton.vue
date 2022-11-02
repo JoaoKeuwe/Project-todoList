@@ -1,11 +1,12 @@
 <template>
+  <link rel="stylesheet" href="../styles/style.css">
   <main id="app" class="container">
     <h1>Todo List</h1>
 
     <!-- Adicionando inpput e botão principal, onde o usuario irá escrever sua tarefa -->
-    <form v-if="!editingTask">
-      <input type="text" v-model="todo" />
-      <input type="button" value="Adicionar" @click="sendTask" />
+    <form v-if="!editingTask" >
+      <input type="text" v-model="todo"  class="input" placeholder="Digite sua tarefa aqui" />
+      <input type="button" value="Adicionar" @click="sendTask"  class="button"/>
     </form>
 
     <!-- caso o botão de editar seja acionado, irá renderizar o botão de editar -->
@@ -76,3 +77,40 @@ export default {
   },
 };
 </script>
+
+
+<style>
+  h1 {
+    color: rgb(252, 92, 0);
+    padding-bottom: 10px;
+  }
+
+  .container {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .input {
+    border-radius: 6px;
+    height: 30px;
+    width: 300px;
+  }
+
+  .input::placeholder {
+    color: rgb(252, 92, 0);
+    font-size: 12px;
+    padding:10px;
+    margin-left: 10px;
+  }
+
+  .button {
+    display: flex;
+    margin-top: 10px;
+    border-radius: 6px;
+    height: 30px
+    
+  }
+</style>

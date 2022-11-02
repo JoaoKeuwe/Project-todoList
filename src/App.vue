@@ -1,6 +1,6 @@
 <template>
  
-  <!-- <InputButtoon /> -->
+   <!-- <InputButtoon /> -->
   <router-view/>
 </template>
 
