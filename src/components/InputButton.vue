@@ -1,25 +1,30 @@
 <template>
-  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/style.css" />
   <main id="app" class="container">
     <h1>Todo List</h1>
 
     <!-- Adicionando inpput e botão principal, onde o usuario irá escrever sua tarefa -->
-    <form v-if="!editingTask" >
-      <input type="text" v-model="todo"  class="input" placeholder="Digite sua tarefa aqui" />
-      <input type="button" value="Adicionar" @click="sendTask"  class="button"/>
+    <form v-if="!editingTask">
+      <input
+        type="text"
+        v-model="todo"
+        class="input"
+        placeholder="Digite sua tarefa aqui"
+      />
+      <input type="button" value="Adicionar" @click="sendTask" class="button" />
     </form>
 
     <!-- caso o botão de editar seja acionado, irá renderizar o botão de editar -->
     <form v-else>
-      <input type="text" v-model="todo" />
-      <input type="submit" value="Editar" @click="updateTask" />
+      <input type="text" v-model="todo" class="input" />
+      <input type="submit" value="Editar" @click="updateTask" class="button" />
     </form>
 
     <!-- renderizando as listas com as tarefas juntamente com os botões de editar e de deletar -->
-    <ol>
-      <li v-for="(todo, index) in tasks" :key="index">
+    <ol class="tasks">
+      <li v-for="(todo, index) in tasks" :key="index" class="tasks-li">
         {{ todo }}
-        <button @click="editTask(index, todo)">Edit</button>
+        <button @click="editTask(index, todo)">Editar</button>
         <button @click="removeTask(index)">Delete</button>
       </li>
     </ol>
@@ -78,39 +83,53 @@ export default {
 };
 </script>
 
-
 <style>
-  h1 {
-    color: rgb(252, 92, 0);
-    padding-bottom: 10px;
-  }
+template {
+  background-color: rgb(38, 67, 57);
+}
+h1 {
+  color: rgb(252, 92, 0);
+  padding-bottom: 10px;
+}
 
-  .container {
-    margin-top: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
+.container {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
-  .input {
-    border-radius: 6px;
-    height: 30px;
-    width: 300px;
-  }
+.input {
+  border-radius: 6px;
+  height: 30px;
+  width: 300px;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid rgb(0, 0, 0);
+}
 
-  .input::placeholder {
-    color: rgb(252, 92, 0);
-    font-size: 12px;
-    padding:10px;
-    margin-left: 10px;
-  }
+.input::placeholder {
+  color: rgb(252, 92, 0);
+  font-size: 12px;
+  margin-left: 10px;
+  letter-spacing: 1px;
+}
 
-  .button {
-    display: flex;
-    margin-top: 10px;
-    border-radius: 6px;
-    height: 30px
-    
-  }
+.button {
+  display: flex;
+  margin-top: 10px;
+  border-radius: 6px;
+  height: 30px;
+  padding: 10px;
+  border: 1px solid rgb(252, 92, 0);
+}
+
+.tasks {
+  margin-top: 60px;
+}
+
+.tasks-li {
+  padding-bottom: 15px;
+}
 </style>
