@@ -34,7 +34,7 @@ ol {
   text-decoration: none;
 }
 .navbar {
-  background-color: rgb(155, 153, 153);
+  background-color: rgb(137, 137, 137);
   width: 100%;
   height: 80px;
   border-bottom: 2px solid #e95119;
