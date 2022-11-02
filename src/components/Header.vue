@@ -1,8 +1,11 @@
 <template>
   <nav>
-    <img src="../img/logo.png" alt="" style="width: 200px" />
-    <router-link to="/">Home</router-link>
+    <nav>
+    <img src="../img/logo.png" alt="" style="width: 200px">
+    <router-link to="/" style="padding: 20px" >Home</router-link>
     <router-link to="/historic">historico</router-link>
+</nav>
+    
   </nav>
 
 </template>

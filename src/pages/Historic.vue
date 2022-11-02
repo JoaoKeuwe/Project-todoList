@@ -1,9 +1,14 @@
 <template>
-    <h1>deu bom historico</h1>
+    <Header/>
+    <p>historico</p>
 </template>
 
 <script>
+import Header from "../components/Header.vue"
     export default {
-       name: 'Historic'
+       name: 'Historic',
+       components: {
+       Header,
+  },
     }
 </script>

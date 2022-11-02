@@ -1,9 +1,16 @@
 <template>
-    <h1>deu bom home</h1>
+    <Header />
+    <InputButtonVue />
 </template>
 
 <script>
+import Header from '../components/Header.vue'
+import InputButtonVue from '../components/InputButton.vue';
     export default {
-       name: 'Home'
+       name: 'Home',
+       components: {
+       Header,
+       InputButtonVue,
+    }
     }
 </script>
