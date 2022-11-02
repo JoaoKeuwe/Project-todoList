@@ -34,7 +34,7 @@
 </template>
 
 <script>
-// aqui está sendo feita a lógica através do methods e a transição de etsados através do data
+// aqui está sendo feita a lógica através do methods e a transição de estados através do data
 
 export default {
   name: "InputButtoon",
@@ -125,15 +125,16 @@ h1 {
   display: flex;
   margin-top: 10px;
   border-radius: 6px;
+  font-size: 14px;
   width: 80px;
   padding: 10px;
-  border: 1px solid #e95119;
+  background-color: #e95119;
 }
 
 .button:hover {
   transform: scale(1.1);
   transition: 0.5s;
-  color: #e95119;
+  color: #ffffff;
 }
 
 .buttonEdit {
@@ -148,6 +149,7 @@ h1 {
 .buttonEdit:hover {
   transform: scale(1.1);
   transition: 0.5s;
+  color: #ffffff;
  
 }
 
@@ -158,11 +160,13 @@ h1 {
   display: inline-block;
   background-color: #e95119;
   border-radius: 6px;
+
 }
 
 .buttonDelete:hover {
   transform: scale(1.1);
   transition: 0.5s;
+  color: #ffffff;
 }
 .tasks {
   margin-top: 60px;
