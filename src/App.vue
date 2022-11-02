@@ -1,6 +1,7 @@
 <template>
   <Header />
   <InputButtoon />
+  <router-view/>
 </template>
 
 <script>
