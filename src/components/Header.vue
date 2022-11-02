@@ -35,8 +35,9 @@ ol {
 }
 .navbar {
   background-color: rgb(155, 153, 153);
+  width: 100%;
   height: 80px;
-  border-bottom: 2px solid rgb(255, 140, 0);
+  border-bottom: 2px solid #e95119;
 }
 
 .link-navbar {
@@ -50,6 +51,7 @@ ol {
 
 .link-navbar:hover {
   transition: 1s;
+  color: #e95119;
   transform: scale(1.2)
 }
 
