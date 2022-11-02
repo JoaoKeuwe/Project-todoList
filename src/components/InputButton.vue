@@ -5,7 +5,7 @@
     <!-- Adicionando inpput e botão principal, onde o usuario irá escrever sua tarefa -->
     <form v-if="!editingTask">
       <input type="text" v-model="todo" />
-      <input type="submit" value="Adicionar" @click="sendTask" />
+      <input type="button" value="Adicionar" @click="sendTask" />
     </form>
 
     <!-- caso o botão de editar seja acionado, irá renderizar o botão de editar -->
