@@ -1,29 +1,78 @@
 <template>
-  <form>
-    <h2 style="margin-top: 200px">Tarefas</h2>
-    <input
-      type="text"
-      placeholder="digite sua tarefa aqui!"
-    />
-    <button type="button" v-on:click="send_task" >Adicionar</button>
-  </form>
+  <main id="app" class="container">
+    <h1>Todo List</h1>
+
+    <!-- Adicionando inpput e botão principal, onde o usuario irá escrever sua tarefa -->
+    <form v-if="!editingTask">
+      <input type="text" v-model="todo" />
+      <input type="submit" value="Adicionar" @click="sendTask" />
+    </form>
+
+    <!-- caso o botão de editar seja acionado, irá renderizar o botão de editar -->
+    <form v-else>
+      <input type="text" v-model="todo" />
+      <input type="submit" value="Editar" @click="updateTask" />
+    </form>
+
+    <!-- renderizando as listas com as tarefas juntamente com os botões de editar e de deletar -->
+    <ol>
+      <li v-for="(todo, index) in tasks" :key="index">
+        {{ todo }}
+        <button @click="editTask(index, todo)">Edit</button>
+        <button @click="removeTask(index)">Delete</button>
+      </li>
+    </ol>
+  </main>
 </template>
 
 <script>
+// aqui está sendo feita a lógica através do methods e a transição de etsados através do data
+
 export default {
   name: "InputButtoon",
   data() {
     return {
-    //   inputTasks: "",
-    }
+      editingTask: false,
+      todo: "",
+      tasks: [],
+      selectedTodo: null,
+      selectedIndex: null,
+    };
   },
   methods: {
-    send_task(e) {
-        e.preventDefault();
-        console.log('caiu aqui')
+    // logica feita para caso não seja adicionada nenhuma tarefa, não renderize nada ou seja, continue vazio
+    sendTask() {
+      if (this.todo.length > 0) {
+        this.tasks.push(this.todo);
+        this.todo = "";
+      } else {
+        // document.getElementById("app").innerText = 'adicione uma tarefa'
+        this.todo = "";
+      }
+    },
 
-        // FAZER A LÓGICA DE QUANDO CLICAR A TASK SER CRIADA EM FORMATO DE LISTA
-    }
-  }
+    // logica para editar a tarefa já adicionada
+    editTask(index, todo) {
+      this.todo = todo;
+      this.selectedIndex = index;
+      this.editingTask = true;
+    },
+
+    updateTask() {
+      // apagando uma posição e logo em seguida adicioanndo a nova task
+      this.tasks.splice(this.selectedIndex, 1, this.todo);
+      this.editingTask = false;
+
+      // caso a opção editar apareça, e você clique no botão, o input irá apagar, para evitar repetições
+      if (this.updateTask) {
+        this.todo = "";
+      }
+    },
+
+    // removendo tarefa
+    removeTask(index) {
+      this.tasks.splice(index, 1);
+    },
+  },
 };
 </script>
