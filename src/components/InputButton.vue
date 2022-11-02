@@ -21,6 +21,8 @@ export default {
     send_task(e) {
         e.preventDefault();
         console.log('caiu aqui')
+
+        // FAZER A LÓGICA DE QUANDO CLICAR A TASK SER CRIADA EM FORMATO DE LISTA
     }
   }
 };
