@@ -11,7 +11,7 @@
         class="input"
         placeholder="Digite sua tarefa aqui"
       />
-      <input type="button" value="Adicionar" @click="sendTask" class="button" />
+      <input type="submit" value="Adicionar" @click="sendTask" class="button" />
     </form>
 
     <!-- caso o botão de editar seja acionado, irá renderizar o botão de editar -->
@@ -24,8 +24,10 @@
     <ol class="tasks">
       <li v-for="(todo, index) in tasks" :key="index" class="tasks-li">
         {{ todo }}
-        <button @click="editTask(index, todo)">Editar</button>
-        <button @click="removeTask(index)">Delete</button>
+        <button @click="editTask(index, todo)" class="buttonEdit">
+          Editar
+        </button>
+        <button @click="removeTask(index)" class="buttonDelete">Delete</button>
       </li>
     </ol>
   </main>
@@ -47,7 +49,8 @@ export default {
   },
   methods: {
     // logica feita para caso não seja adicionada nenhuma tarefa, não renderize nada ou seja, continue vazio
-    sendTask() {
+    sendTask(e) {
+      e.preventDefault();
       if (this.todo.length > 0) {
         this.tasks.push(this.todo);
         this.todo = "";
@@ -88,8 +91,10 @@ template {
   background-color: rgb(38, 67, 57);
 }
 h1 {
-  color: rgb(252, 92, 0);
+  color: #e95119;
   padding-bottom: 10px;
+  font-size: 40px;
+  letter-spacing: 1px;
 }
 
 .container {
@@ -102,7 +107,7 @@ h1 {
 
 .input {
   border-radius: 6px;
-  height: 30px;
+  height: 35px;
   width: 300px;
   padding: 10px;
   font-size: 15px;
@@ -110,7 +115,7 @@ h1 {
 }
 
 .input::placeholder {
-  color: rgb(252, 92, 0);
+  color: #e95119;
   font-size: 12px;
   margin-left: 10px;
   letter-spacing: 1px;
@@ -120,16 +125,51 @@ h1 {
   display: flex;
   margin-top: 10px;
   border-radius: 6px;
-  height: 30px;
+  width: 80px;
   padding: 10px;
-  border: 1px solid rgb(252, 92, 0);
+  border: 1px solid #e95119;
 }
 
+.button:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+  color: #e95119;
+}
+
+.buttonEdit {
+  margin-left: 20px;
+  width: 70px;
+  height: 30px;
+  display: inline-block;
+  background-color: #e95119;
+  border-radius: 6px;
+}
+
+.buttonEdit:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+ 
+}
+
+.buttonDelete {
+  margin-left: 10px;
+  width: 70px;
+  height: 30px;
+  display: inline-block;
+  background-color: #e95119;
+  border-radius: 6px;
+}
+
+.buttonDelete:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
 .tasks {
   margin-top: 60px;
 }
 
 .tasks-li {
   padding-bottom: 15px;
+  font-size: 25px;
 }
 </style>
