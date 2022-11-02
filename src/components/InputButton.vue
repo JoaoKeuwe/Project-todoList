@@ -1,6 +1,8 @@
 <template>
-  <link rel="stylesheet" href="../styles/style.css" />
   <main id="app" class="container">
+    
+
+    <!-- <span > <Historic :historic="tasks"/></span> -->
     <h1>Todo List</h1>
 
     <!-- Adicionando inpput e botão principal, onde o usuario irá escrever sua tarefa -->
@@ -22,8 +24,10 @@
 
     <!-- renderizando as listas com as tarefas juntamente com os botões de editar e de deletar -->
     <ol class="tasks">
-      <li v-for="(todo, index) in tasks" :key="index" class="tasks-li">
+      <li v-for="(todo, index) in tasks" :key="index" >
+        <div class="tasks-li">
         {{ todo }}
+      </div>
         <button @click="editTask(index, todo)" class="buttonEdit">
           Editar
         </button>
@@ -34,10 +38,14 @@
 </template>
 
 <script>
+import Historic from '../pages/Historic.vue'
 // aqui está sendo feita a lógica através do methods e a transição de estados através do data
 
 export default {
   name: "InputButtoon",
+  components: {
+    Historic
+  },
   data() {
     return {
       editingTask: false,
@@ -96,6 +104,8 @@ h1 {
   font-size: 40px;
   letter-spacing: 1px;
 }
+
+
 
 .container {
   margin-top: 60px;
@@ -174,6 +184,9 @@ h1 {
 
 .tasks-li {
   padding-bottom: 15px;
-  font-size: 25px;
+  font-size: 20px;
+  width: 140px;
+  display: inline-block;
+  justify-content: center;
 }
 </style>

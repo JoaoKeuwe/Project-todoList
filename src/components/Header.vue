@@ -6,7 +6,7 @@
       </div>
       <div class="links">
         <router-link to="/" class="link-navbar">Home</router-link>
-        <router-link to="/historic" class="link-navbar">historico</router-link>
+        <router-link to="/historic" class="link-navbar">Histórico</router-link>
       </div>
     </nav>
   </nav>
@@ -35,7 +35,6 @@ ol {
 }
 .navbar {
   background-color: rgb(137, 137, 137);
-  width: 100%;
   height: 80px;
   border-bottom: 2px solid #e95119;
 }

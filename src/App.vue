@@ -1,7 +1,7 @@
 <template>
- 
-   <!-- <InputButtoon /> -->
-  <router-view/>
+  <div>
+   <router-view/>
+  </div>
 </template>
 
 <script>
