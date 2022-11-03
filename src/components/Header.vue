@@ -41,7 +41,7 @@ ol {
 
 .link-navbar {
   padding: 20px;
-  padding-left: 50px;
+  
   text-decoration: none;
   font-size: 35px;
   color: white;
