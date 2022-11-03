@@ -1,9 +1,7 @@
 <template>
   <main id="app" class="container">
-    
-
-    <!-- <span > <Historic :historic="tasks"/></span> -->
     <h1>Todo List</h1>
+    
 
     <!-- Adicionando inpput e botão principal, onde o usuario irá escrever sua tarefa -->
     <form v-if="!editingTask">
@@ -24,27 +22,28 @@
 
     <!-- renderizando as listas com as tarefas juntamente com os botões de editar e de deletar -->
     <ol class="tasks">
-      <li v-for="(todo, index) in tasks" :key="index" >
+      <li v-for="(todo, index) in tasks" :key="index">
         <div class="tasks-li">
-        {{ todo }}
-      </div>
+          {{ todo }}
+        </div>
         <button @click="editTask(index, todo)" class="buttonEdit">
-          Editar
+          <img src="../img/edit.svg" alt="" style="width: 20px "/>
         </button>
-        <button @click="removeTask(index)" class="buttonDelete">Delete</button>
+        <button @click="removeTask(index)" class="buttonDelete"> <img src="../img/trash-alt.svg" alt="" style="width: 20px;"></button>
       </li>
     </ol>
   </main>
 </template>
 
 <script>
-import Historic from '../pages/Historic.vue'
+import Historic from "../pages/Historic.vue";
+
 // aqui está sendo feita a lógica através do methods e a transição de estados através do data
 
 export default {
   name: "InputButtoon",
   components: {
-    Historic
+    Historic,
   },
   data() {
     return {
@@ -95,17 +94,13 @@ export default {
 </script>
 
 <style>
-template {
-  background-color: rgb(38, 67, 57);
-}
+
 h1 {
   color: #e95119;
   padding-bottom: 10px;
   font-size: 40px;
   letter-spacing: 1px;
 }
-
-
 
 .container {
   margin-top: 60px;
@@ -149,7 +144,7 @@ h1 {
 
 .buttonEdit {
   margin-left: 20px;
-  width: 70px;
+  width: 30px;
   height: 30px;
   display: inline-block;
   background-color: #e95119;
@@ -160,17 +155,15 @@ h1 {
   transform: scale(1.1);
   transition: 0.5s;
   color: #ffffff;
- 
 }
 
 .buttonDelete {
   margin-left: 10px;
-  width: 70px;
+  width: 30px;
   height: 30px;
   display: inline-block;
   background-color: #e95119;
   border-radius: 6px;
-
 }
 
 .buttonDelete:hover {
