@@ -98,7 +98,7 @@ export default {
 h1 {
   color: #e95119;
   padding-bottom: 10px;
-  font-size: 40px;
+  font-size: 50px;
   letter-spacing: 1px;
 }
 
@@ -112,8 +112,8 @@ h1 {
 
 .input {
   border-radius: 6px;
-  height: 35px;
-  width: 300px;
+  height: 45px;
+  width: 320px;
   padding: 10px;
   font-size: 15px;
   border: 1px solid rgb(0, 0, 0);
@@ -121,7 +121,7 @@ h1 {
 
 .input::placeholder {
   color: #e95119;
-  font-size: 12px;
+  font-size: 16px;
   margin-left: 10px;
   letter-spacing: 1px;
 }
@@ -177,9 +177,10 @@ h1 {
 
 .tasks-li {
   padding-bottom: 15px;
-  font-size: 20px;
+  font-size: 25px;
   width: 140px;
   display: inline-block;
   justify-content: center;
 }
+
 </style>
