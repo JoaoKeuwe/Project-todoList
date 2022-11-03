@@ -1,7 +1,6 @@
 <template>
   <main id="app" class="container">
     <h1>Todo List</h1>
-    
 
     <!-- Adicionando inpput e botão principal, onde o usuario irá escrever sua tarefa -->
     <form v-if="!editingTask">
@@ -27,9 +26,11 @@
           {{ todo }}
         </div>
         <button @click="editTask(index, todo)" class="buttonEdit">
-          <img src="../img/edit.svg" alt="" style="width: 20px "/>
+          <img src="../img/edit.svg" alt="" style="width: 20px" />
         </button>
-        <button @click="removeTask(index)" class="buttonDelete"> <img src="../img/trash-alt.svg" alt="" style="width: 20px;"></button>
+        <button @click="removeTask(index)" class="buttonDelete">
+          <img src="../img/trash-alt.svg" alt="" style="width: 20px" />
+        </button>
       </li>
     </ol>
   </main>
@@ -94,7 +95,6 @@ export default {
 </script>
 
 <style>
-
 h1 {
   color: #e95119;
   padding-bottom: 10px;
