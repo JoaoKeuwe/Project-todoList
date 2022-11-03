@@ -1,6 +1,8 @@
 <template>
+  <div>
   <Header />
   <InputButtonVue />
+</div>
 </template>
 
 <script>

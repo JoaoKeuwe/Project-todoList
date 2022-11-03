@@ -21,11 +21,11 @@
 
     <!-- renderizando as listas com as tarefas juntamente com os botões de editar e de deletar -->
     <ol class="tasks">
-      <li v-for="(todo, index) in tasks" :key="index">
+      <li v-for="(task, index) in tasks" :key="index">
         <div class="tasks-li">
-          {{ todo }}
+          {{ task.name }}
         </div>
-        <button @click="editTask(index, todo)" class="buttonEdit">
+        <button @click="editTask(index, task.name)" class="buttonEdit">
           <img src="../img/edit.svg" alt="" style="width: 20px" />
         </button>
         <button @click="removeTask(index)" class="buttonDelete">
@@ -46,6 +46,16 @@ export default {
   components: {
     Historic,
   },
+  watch: {
+    "$store.state.tasks": {
+      immediate: true,
+      deep: true,
+      handler({tasks}) {
+       
+        this.tasks = tasks
+      }
+    },
+  },
   data() {
     return {
       editingTask: false,
@@ -57,10 +67,10 @@ export default {
   },
   methods: {
     // logica feita para caso não seja adicionada nenhuma tarefa, não renderize nada ou seja, continue vazio
-    sendTask(e) {
+   async sendTask(e) {
       e.preventDefault();
       if (this.todo.length > 0) {
-        this.tasks.push(this.todo);
+        await this.$store.dispatch('addTasks', this.todo);
         this.todo = "";
       } else {
         // document.getElementById("app").innerText = 'adicione uma tarefa'
@@ -90,6 +100,12 @@ export default {
     removeTask(index) {
       this.tasks.splice(index, 1);
     },
+  },
+
+ async mounted() {
+  
+    const data = this.$store.state.tasks
+
   },
 };
 </script>
@@ -182,5 +198,4 @@ h1 {
   display: inline-block;
   justify-content: center;
 }
-
 </style>

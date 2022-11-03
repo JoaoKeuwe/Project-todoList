@@ -1,14 +1,12 @@
 <template>
+  <div>
   <Header />
   <p>Histórico</p>
-  <li v-for="(todo, index) in historic" :key="index" class="tasks-li">
-    {{ todo }}
-  </li>
+</div>
 </template>
 
 <script>
 import Header from "../components/Header.vue";
-import { mapState, mapMutations } from "vuex";
 
 export default {
   name: "Historic",
