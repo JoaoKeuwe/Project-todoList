@@ -152,16 +152,39 @@ h1 {
 .buttonChecked {
   text-decoration: line-through;
   opacity: calc(0.5);
+  transition: 0.4s;
 }
 
 .buttonCheck {
-  background-color: green;
+  background-color: rgb(143, 145, 143);
   margin-left: 20px;
   width: 30px;
   height: 30px;
   display: inline-block;
-  background-color: #e95119;
   border-radius: 6px;
+  border-radius: 50%;
+}
+
+.buttonCheck:hover {
+  transform: scale(1.1);
+  
+  color: #ffffff;
+  background-color: rgba(16, 234, 16, 0.511);
+}
+
+.buttonCheck:active {
+  position: relative;
+
+  width: 29px;
+  height: 29px;
+  background: rgba(16, 234, 16, 0.511);
+  
+}
+
+.buttonCheck:focus{
+outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
 }
 
 .button:hover {
