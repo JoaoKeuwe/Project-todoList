@@ -51,7 +51,7 @@ ol {
 .link-navbar:hover {
   transition: 1s;
   color: #e95119;
-  transform: scale(1.2)
+  transform: scale(1.2);
 }
 
 .header {
@@ -69,7 +69,7 @@ ol {
 .links {
   display: flex;
   width: 900px;
-  
+
   /* justify-content: flex-start; */
 }
 </style>
