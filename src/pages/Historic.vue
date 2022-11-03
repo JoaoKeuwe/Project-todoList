@@ -2,8 +2,8 @@
   <Header />
   <p>Histórico</p>
   <li v-for="(todo, index) in historic" :key="index" class="tasks-li">
-        {{ todo }}
-      </li>
+    {{ todo }}
+  </li>
 </template>
 
 <script>
@@ -15,20 +15,19 @@ export default {
   components: {
     Header,
   },
-   props: {
-    historic: String
+  props: {
+    historic: String,
   },
-//   computed: {
-//     ...mapState({
-//       counter: (state) => state.count,
-//     }),
-//   },
-//   methods: {
-//     ...mapMutations([
-//         'editTask',
-//         'removeTask'
-//      ])
-//   }
+  //   computed: {
+  //     ...mapState({
+  //       counter: (state) => state.count,
+  //     }),
+  //   },
+  //   methods: {
+  //     ...mapMutations([
+  //         'editTask',
+  //         'removeTask'
+  //      ])
+  //   }
 };
-
 </script>
