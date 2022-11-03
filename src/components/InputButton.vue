@@ -22,15 +22,22 @@
     <!-- renderizando as listas com as tarefas juntamente com os botões de editar e de deletar -->
     <ol class="tasks">
       <li v-for="(todo, index) in tasks" :key="index">
-        <div class="tasks-li">
+        <div class="tasks-li" :class = "{buttonChecked: lineCheck }">
           {{ todo }}
         </div>
+        <button @click="lineCheck= !lineCheck" class="buttonCheck ">
+          <img src="../img/check.svg" alt="" style="width: 20px" />
+        </button>
+
         <button @click="editTask(index, todo)" class="buttonEdit">
           <img src="../img/edit.svg" alt="" style="width: 20px" />
         </button>
+
+        
         <button @click="removeTask(index)" class="buttonDelete">
           <img src="../img/trash-alt.svg" alt="" style="width: 20px" />
         </button>
+        
       </li>
     </ol>
   </main>
@@ -51,6 +58,7 @@ export default {
       editingTask: false,
       todo: "",
       tasks: [],
+      lineCheck: false,
       selectedTodo: null,
       selectedIndex: null,
     };
@@ -90,6 +98,7 @@ export default {
     removeTask(index) {
       this.tasks.splice(index, 1);
     },
+
   },
 };
 </script>
@@ -134,6 +143,21 @@ h1 {
   width: 80px;
   padding: 10px;
   background-color: #e95119;
+}
+
+.buttonChecked {
+  text-decoration: line-through;
+  opacity: calc(0.5);
+}
+
+.buttonCheck {
+  background-color: green;
+  margin-left: 20px;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-color: #e95119;
+  border-radius: 6px;
 }
 
 .button:hover {
