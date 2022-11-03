@@ -22,14 +22,14 @@
     <!-- renderizando as listas com as tarefas juntamente com os botões de editar e de deletar -->
     <ol class="tasks">
       <li v-for="(todo, index) in tasks" :key="index">
-        <div class="tasks-li" :class = "{buttonChecked: lineCheck }">
-          {{ todo }}
+        <div class="tasks-li" :class = "{buttonChecked: todo.check }">
+          {{ todo.task }}
         </div>
-        <button @click="lineCheck= !lineCheck" class="buttonCheck ">
+        <button @click="lineCheck(index)" class="buttonCheck ">
           <img src="../img/check.svg" alt="" style="width: 20px" />
         </button>
 
-        <button @click="editTask(index, todo)" class="buttonEdit">
+        <button @click="editTask(index, todo.task)" class="buttonEdit">
           <img src="../img/edit.svg" alt="" style="width: 20px" />
         </button>
 
@@ -58,7 +58,6 @@ export default {
       editingTask: false,
       todo: "",
       tasks: [],
-      lineCheck: false,
       selectedTodo: null,
       selectedIndex: null,
     };
@@ -68,7 +67,7 @@ export default {
     sendTask(e) {
       e.preventDefault();
       if (this.todo.length > 0) {
-        this.tasks.push(this.todo);
+        this.tasks.push({task: this.todo, check:false});
         this.todo = "";
       } else {
         // document.getElementById("app").innerText = 'adicione uma tarefa'
@@ -83,9 +82,10 @@ export default {
       this.editingTask = true;
     },
 
-    updateTask() {
+    updateTask(e) {
       // apagando uma posição e logo em seguida adicioanndo a nova task
-      this.tasks.splice(this.selectedIndex, 1, this.todo);
+      e.preventDefault();
+      this.tasks[this.selectedIndex ].task = this.todo
       this.editingTask = false;
 
       // caso a opção editar apareça, e você clique no botão, o input irá apagar, para evitar repetições
@@ -97,6 +97,10 @@ export default {
     // removendo tarefa
     removeTask(index) {
       this.tasks.splice(index, 1);
+    },
+
+    lineCheck(index) {
+      this.tasks[index].check = !this.tasks[index].check
     },
 
   },
