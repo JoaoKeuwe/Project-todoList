@@ -1,7 +1,6 @@
 <template>
-
-<div>
-   <router-view/>
+  <div>
+    <router-view />
   </div>
 </template>
 
@@ -14,6 +13,6 @@ export default {
   components: {
     Header,
     InputButtoon,
-  }
+  },
 };
 </script>
