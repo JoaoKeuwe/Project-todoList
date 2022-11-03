@@ -176,9 +176,9 @@ h1 {
 }
 
 .tasks-li {
-  padding-bottom: 15px;
+  padding-bottom: 25px;
   font-size: 25px;
-  width: 140px;
+  width: 250px;
   display: inline-block;
   justify-content: center;
 }
