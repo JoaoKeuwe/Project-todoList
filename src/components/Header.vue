@@ -2,7 +2,7 @@
   <nav class="navbar">
     <nav class="header">
       <div class="foto-logo">
-        <img src="../img/logo.png" alt="" style="width: 200px" />
+        <img src="../img/logo.png" alt="" style="width: 300px" />
       </div>
       <div class="links">
         <router-link to="/" class="link-navbar">Home</router-link>
@@ -41,8 +41,9 @@ ol {
 
 .link-navbar {
   padding: 20px;
+  padding-left: 50px;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 35px;
   color: white;
   letter-spacing: 1px;
   align-items: center;
@@ -68,8 +69,8 @@ ol {
 
 .links {
   display: flex;
-  width: 900px;
 
   /* justify-content: flex-start; */
 }
+
 </style>
