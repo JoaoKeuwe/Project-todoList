@@ -44,15 +44,11 @@
 </template>
 
 <script>
-import Historic from "../pages/Historic.vue";
 
 // aqui está sendo feita a lógica através do methods e a transição de estados através do data
 
 export default {
-  name: "InputButtoon",
-  components: {
-    Historic,
-  },
+
   data() {
     return {
       editingTask: false,
