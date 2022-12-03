@@ -2,11 +2,10 @@
   <nav class="navbar">
     <nav class="header">
       <div class="foto-logo">
-        <img src="../img/logo.png" alt="" style="width: 300px" />
+        <img class="logo" src="../img/logo.png" alt="" style="width: 330px" />
       </div>
       <div class="links">
         <router-link to="/" class="link-navbar">Home</router-link>
-        <router-link to="/historic" class="link-navbar">Histórico</router-link>
       </div>
     </nav>
   </nav>
@@ -30,18 +29,23 @@ export default {
   box-sizing: border-box;
 }
 
+.logo {
+  margin-top: -125px;
+}
+
 ol {
   text-decoration: none;
 }
 .navbar {
   background-color: rgb(137, 137, 137);
   height: 80px;
+  width: 100%;
   border-bottom: 2px solid #e95119;
 }
 
 .link-navbar {
   padding: 20px;
-  
+  margin-top: -100px;
   text-decoration: none;
   font-size: 35px;
   color: white;
